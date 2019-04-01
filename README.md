@@ -1,3 +1,10 @@
-# My Awesome Book
+# Orange's operating system
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+1. ### **this book records my minds about os.**
+2. ### the problems whate i find in learning orange's book
+3. ### from a newbie to be a master 
+
+
+
+
+
