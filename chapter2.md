@@ -28,6 +28,12 @@
   #### 在描述由 SS 寄存器寻址的段描述符中,D 位决定隐式的堆栈访问指令\(如 PUSH 和 POP 指令\)使用何种堆栈指针寄存器。D=1 表示使用 32 位堆栈指针寄存器 ESP;D=0 表示使用 16 位堆栈指针寄存器 SP,这与 80286 兼容。
 * #### AVL 位是软件可利用位。80386 对该位的使用未做规定,Intel 公司也保证今后开发生产的处理器只要与 80386 兼容,就不会对该位的使用做任何定义或规定。此外,描述符内第 6 字节中的位 5 必须置为 0,可以理解成是为以后的处理器保留的。
 
+#### ![](http://images.51cto.com/files/uploadimg/20081225/114950780.jpg)
+
+![](file:///C:\Users\chinbor\Documents\Tencent Files\949524548\Image\C2C\748U5VGG0CY4`XDPIX@11NT.png)
+
+![](file:///C:\Users\chinbor\Documents\Tencent Files\949524548\Image\C2C\{K{UECY%EP@VTV5[5S%28GGIQ.png)
+
 #### 2.存储段描述符的结构类型表示
 
 ```
