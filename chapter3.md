@@ -108,7 +108,45 @@
 >
 > #### 段基地址仍是32位，其值是相应段寄存器值\(段值\)乘以16，在把段值装载到段寄存器时刷新。由于其值是16位段值乘上16，所以在实模式下基地址实际上有效位只有20位（最高的20位）。每个段的32位段界限都固定为0FFFFH，段属性的许多位也是固定的。所谓固定是指在实方式下不可设置这些属性值，只能继续沿用保护方式下所设置的值。因此，在准备结束保护模式回到实模式之前，**要通过加载一个合适的描述符选择子（如实例代码中的Normal选择子）到有关段寄存器，以使得对应段描述符高速缓冲寄存器中含有合适的段界限和属性。**必须在保护模式下设置好段高速缓冲寄存器的值，因为一旦到了实模式下就不能在改变了。
 
-##### 
+#### 关于orange's书中的sudo mount -o loop pm.img /mnt/floppy不成功的解决办法（pm.img未初始化）
+
+> 1.使用 losetup 命令，将 pm.img 作为 loop device 使用：
+>
+> ```
+> sudo losetup /dev/loop0 pm.img
+> ```
+>
+> 2.然后，格式化这个 loop device：
+>
+> ```
+> sudo mkfs.msdos /dev/loop0
+> ```
+>
+> 3.检查文件系统：
+>
+> ```
+> sudo fsck.msdos /dev/loop0
+> ```
+>
+> 4.删除 loop device：
+>
+> ```
+> sudo losetup -d /dev/loop0
+> ```
+>
+> 这时候，pm.img 已经格式化完成，可以作为一个软盘镜像使用。用file查看，结果为：
+>
+> ```
+> pm.img: DOS floppy 1440k, x86 hard disk boot sector
+> ```
+>
+> 再次输入
+>
+> ```
+> sudo mount -o loop pm.img /mnt/floppy
+> ```
+
+
 
 
 
