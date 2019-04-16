@@ -176,7 +176,17 @@
 >
 > ##### u start end：反汇编一段内存中的机器码（对于知道地址但是不知道具体汇编指令很有用）
 
-##### 
+#### **Address Range Descriptor Structure：（地址范围描述符结构）**
+
+> ![](/assets/QQ图片20190416133103.png)其中Type的取值及其意义如下:![](/assets/QQ图片20190416133110.png)如下一些原因造成BIOS将某个内存段标记为AddressRangeReserved:
+>
+> * 这个地址范围包含着系统ROM；
+>
+> * 这个地址范围包含着被ROM使用的RAM；
+> * 这个地址范围被用作系统设备内存映射；
+> * 这个地址范围由于某种原因,不适合被标准设备用作设备内存空间。
+>
+> ARDS 中的BaseAddr为由BaseAddrLow和BaseAddrHigh组成的64位地址，长度也为LengthLow和LengthHigh两个32位数据组成的64位长度，在使用中好像高32位并没有用到，为零。Type取值为16进制。查看内存容量使用INT 15h ，将描述最后一个可用的内存段的ARDS中的BaseAddrLow+LengthLow即可得到内存容量，据此进行内存的分页。
 
 
 
