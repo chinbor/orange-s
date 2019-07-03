@@ -10,3 +10,5 @@
 * [Seventh Chapter ](/chapter7.md)
 * [Eighth Chapter](chapter8.md)
 
+click [here](chapter1.md) to jump 
+
